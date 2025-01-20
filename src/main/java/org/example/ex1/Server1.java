@@ -2,6 +2,7 @@ package org.example.ex1;
 
 import lombok.Cleanup;
 
+import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -19,7 +20,13 @@ public class Server1 {
         Socket clientSocket = serverSocket.accept();
         System.out.println(clientSocket);
 
-        
+        @Cleanup
+        OutputStream outputStream = clientSocket.getOutputStream();
+
+
+        //a
+        outputStream.write(97);
+
 
 
     }

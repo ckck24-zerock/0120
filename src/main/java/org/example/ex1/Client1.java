@@ -19,7 +19,7 @@ public class Client1 {
 
         @Cleanup OutputStream outputStream = socket.getOutputStream();
 
-        String msg ="삶의 진정한 가치는 어떻게 살았는가에 달려 있다.\\n";
+        String msg ="삶의 진정한 가치는 어떻게 살았는가에 달려 있다.\n";
 
         byte[] arr = msg.getBytes();
 

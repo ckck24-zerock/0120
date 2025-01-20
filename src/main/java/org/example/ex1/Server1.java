@@ -2,9 +2,11 @@ package org.example.ex1;
 
 import lombok.Cleanup;
 
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class Server1 {
 
@@ -22,9 +24,15 @@ public class Server1 {
             System.out.println(clientSocket);
 
             @Cleanup
-            OutputStream outputStream = clientSocket.getOutputStream();
-            //a
-            outputStream.write(97);
+            InputStream inputStream = clientSocket.getInputStream();
+
+            @Cleanup
+            Scanner inScanner = new Scanner(inputStream);
+
+            String line = inScanner.nextLine();
+
+            System.out.println(line);
+
         }//for end
 
     }//end main

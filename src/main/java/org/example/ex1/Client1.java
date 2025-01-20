@@ -2,6 +2,7 @@ package org.example.ex1;
 
 import lombok.Cleanup;
 
+import java.io.InputStream;
 import java.net.Socket;
 
 public class Client1 {
@@ -12,6 +13,13 @@ public class Client1 {
         @Cleanup Socket socket = new Socket("127.0.0.1", 5555);
 
         System.out.println(socket);
+
+        @Cleanup
+        InputStream inputStream = socket.getInputStream();
+
+        int data = inputStream.read();
+
+        System.out.println(data);
 
 
     }

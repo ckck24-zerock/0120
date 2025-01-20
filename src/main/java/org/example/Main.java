@@ -19,13 +19,15 @@ public class Main {
         //모든 빨대는 사용후에 닫는다. close
         while(true){
 
-            int data = in.read();
+            int data = in.read(); // 1 byte  + 255 음수가 나올 수 없게
 
-            System.out.println(data);
+            //System.out.println(data);
 
-            if(data == -1){
+            if(data == -1){ //더 이상 읽어야 하는 데이터가 없는 경우
                 break;
             }
+
+            out.write(data);
 
         }//end while
 

@@ -12,14 +12,14 @@ public class FileCopy2 {
         // try catch finally
         // try with resource // auto close
         @Cleanup
-        InputStream in = new FileInputStream("C:\\zzz\\aaa.jpg");
+        InputStream fin = new FileInputStream("C:\\zzz\\aaa.jpg");
         @Cleanup
         OutputStream out = new FileOutputStream("C:\\zzz\\copy.jpg");
 
         //모든 빨대는 사용후에 닫는다. close
         while(true){
 
-            int data = in.read(); // 1 byte  + 255 음수가 나올 수 없게
+            int data = fin.read(); // 1 byte  + 255 음수가 나올 수 없게
 
             //System.out.println(data);
 

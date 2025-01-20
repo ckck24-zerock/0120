@@ -13,13 +13,13 @@ public class Main {
     //bad code
     public static void main(String[] args) throws Exception{
 
-        String path ="https://image6.coupangcdn.com/image/vendor_inventory/8130/a5332057106c049b765ac100b3ee679700895a09a35a38820e3e10367097.jpg";
+        String path ="http://mp4.cine21.com/cine21/multi/trailer/a-b/banzi_pre_2.mp4";
         URL url = new URL(path);
         InputStream in = url.openStream();
 
         //Menu m = new PizzaMenu();
         //InputStream in = new FileInputStream("C:\\zzz\\aaa.jpg");
-        OutputStream out = new FileOutputStream("C:\\zzz\\copy.jpg");
+        OutputStream out = new FileOutputStream("C:\\zzz\\copy.mp4");
 
         //모든 빨대는 사용후에 닫는다. close
         while(true){

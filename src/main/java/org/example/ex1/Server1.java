@@ -16,21 +16,19 @@ public class Server1 {
         ServerSocket serverSocket = new ServerSocket(5555);
         System.out.println("Server Opened...");
 
-        @Cleanup
-        Socket clientSocket = serverSocket.accept();
-        System.out.println(clientSocket);
+        for(int i = 0; i < 100; i++){
+            @Cleanup
+            Socket clientSocket = serverSocket.accept();
+            System.out.println(clientSocket);
 
-        @Cleanup
-        OutputStream outputStream = clientSocket.getOutputStream();
+            @Cleanup
+            OutputStream outputStream = clientSocket.getOutputStream();
+            //a
+            outputStream.write(97);
+        }//for end
 
-
-        //a
-        outputStream.write(97);
-
-
-
-    }
-}
+    }//end main
+}//end class
 
 
 

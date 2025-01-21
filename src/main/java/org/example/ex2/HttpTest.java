@@ -3,6 +3,7 @@ package org.example.ex2;
 import lombok.Cleanup;
 
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -22,6 +23,7 @@ public class HttpTest {
 
             @Cleanup Socket client = serverSocket.accept();
             @Cleanup InputStream in = client.getInputStream();
+            @Cleanup OutputStream out = client.getOutputStream();
 
             int count = in.read(arr); //몇 개나 새로운 데이터가 채워졌는지
 
@@ -29,6 +31,16 @@ public class HttpTest {
 
             System.out.println(str);
             System.out.println("----------------------------");
+
+            // HTTP 응답 작성
+            String response = """
+                            HTTP/1.1 200 OK
+                            Content-Type: text/plain; charset=UTF-8
+                            Content-Length: 12
+
+                            Hello World
+                            """;
+
 
         }//end for
 

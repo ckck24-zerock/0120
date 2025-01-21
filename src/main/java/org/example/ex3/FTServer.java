@@ -22,6 +22,7 @@ public class FTServer {
 
         while(true){
 
+            System.out.println("---------------------------");
             @Cleanup
             Socket socket = serverSocket.accept();
             @Cleanup
@@ -39,7 +40,7 @@ public class FTServer {
 
             }//end while
 
-
+            System.out.println("===========================");
 
 
         }//end while

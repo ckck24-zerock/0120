@@ -23,7 +23,7 @@ public class FileCopy2 {
 
             int data = fin.read(); // 1 byte  + 255 음수가 나올 수 없게
 
-            //System.out.println(data);
+            System.out.println(data);
 
             if(data == -1){ //더 이상 읽어야 하는 데이터가 없는 경우
                 break;

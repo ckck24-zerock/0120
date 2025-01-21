@@ -35,11 +35,12 @@ public class HttpTest {
             // HTTP 응답 작성
             String response = """
                             HTTP/1.1 200 OK
-                            Content-Type: text/plain; charset=UTF-8
-                            Content-Length: 12
+                            Content-Type: text/html; charset=UTF-8
 
-                            Hello World
                             """;
+
+            response += "<h1>Hello " + System.currentTimeMillis() +"</h1>";
+
             byte[] msgArr = response.getBytes();
             out.write(msgArr);
 

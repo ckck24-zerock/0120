@@ -40,7 +40,8 @@ public class HttpTest {
 
                             Hello World
                             """;
-
+            byte[] msgArr = response.getBytes();
+            out.write(msgArr);
 
         }//end for
 

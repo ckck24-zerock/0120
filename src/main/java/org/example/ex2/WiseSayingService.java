@@ -15,5 +15,8 @@ public enum WiseSayingService {
         sentences[4] = "똥 먹는데 카레 얘기하지 마라 - 짱구 아빠";
     }
 
-
+    public String getOne() {
+        int idx =(int)(Math.random() * 5); //0,1,2,3,4
+        return sentences[idx];
+    }
 }

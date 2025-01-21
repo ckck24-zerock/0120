@@ -39,7 +39,7 @@ public class HttpTest {
 
                             """;
 
-            response += "<h1>Hello " + System.currentTimeMillis() +"</h1>";
+            response += "<h1>" + WiseSayingService.INSTANCE.getOne()  +"</h1>";
 
             byte[] msgArr = response.getBytes();
             out.write(msgArr);

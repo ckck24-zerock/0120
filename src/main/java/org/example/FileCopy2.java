@@ -16,6 +16,8 @@ public class FileCopy2 {
         @Cleanup
         OutputStream out = new FileOutputStream("C:\\zzz\\copy.jpg");
 
+        long start = System.currentTimeMillis();
+
         //모든 빨대는 사용후에 닫는다. close
         while(true){
 
@@ -30,6 +32,10 @@ public class FileCopy2 {
             out.write(data);
 
         }//end while
+
+        long end = System.currentTimeMillis();
+
+        System.out.println(end - start);
     }
 
 }

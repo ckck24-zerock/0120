@@ -13,12 +13,14 @@ public class FileCopy3 {
     public static void main(String[] args) throws Exception {
 
         @Cleanup
-        InputStream fin = new FileInputStream("C:\\zzz\\test.txt");
+        InputStream fin = new FileInputStream("C:\\zzz\\aaa.jpg");
 
-        byte[] buffer = new byte[5];
+        byte[] buffer = new byte[1024 * 8];
 
         @Cleanup
-        OutputStream fos = new FileOutputStream("copy.txt");
+        OutputStream fos = new FileOutputStream("copy.jpg");
+
+        long start = System.currentTimeMillis();
 
         while(true){
 
@@ -31,6 +33,10 @@ public class FileCopy3 {
             fos.write(buffer, 0, count); // 맨처음부터, 새롭게 채워진 숫자만큼만
 
         }//end while
+
+        long end = System.currentTimeMillis();
+
+        System.out.println(end - start);
 
     }
 

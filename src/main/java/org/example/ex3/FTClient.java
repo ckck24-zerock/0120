@@ -1,0 +1,32 @@
+package org.example.ex3;
+
+import lombok.Cleanup;
+
+import java.io.InputStream;
+import java.net.Socket;
+
+public class FTClient {
+
+    //bad code
+    public static void main(String[] args)throws Exception {
+
+        @Cleanup
+        Socket socket = new Socket("192.168.0.40",5555);
+
+        @Cleanup
+        InputStream in = socket.getInputStream();
+
+        byte[] buffer = new byte[1024];
+
+        System.out.println("전송된 데이터 읽기 시작");
+        
+        while(true){
+            int count = in.read(buffer);
+            System.out.println(count);
+            if(count == -1) { break; }
+
+        }//end while
+    }
+}
+
+

@@ -16,7 +16,9 @@ public class FTServer {
         ServerSocket serverSocket = new ServerSocket(5555);
         System.out.println("FTServer Ready....");
 
-        String fileName = "C:\\zzz\\1.jpg";
+        int num = (int)(Math.random() * 4) + 1; // 1 -- 4
+
+        String fileName = "C:\\zzz\\"+num+".jpg";
 
         byte[] buffer = new byte[1024*8];
 
